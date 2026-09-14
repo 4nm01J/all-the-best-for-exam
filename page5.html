@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-Exam Agreement</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #09090b;
+            color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+        }
+        .card {
+            max-width: 460px;
+            width: 100%;
+            background: #18181b;
+            border: 1px dashed #52525b;
+            border-radius: 20px;
+            padding: 35px 25px;
+        }
+        h2 { font-size: 1.6rem; margin-bottom: 6px; }
+        .sub { color: #a1a1aa; font-size: 0.85rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px; }
+        .clause-box {
+            background: #09090b;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: left;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            border: 1px solid #27272a;
+        }
+        .clause-box div { margin-bottom: 10px; }
+        .clause-box div:last-child { margin-bottom: 0; }
+        .stamp {
+            display: inline-block;
+            border: 2px solid #22c55e;
+            color: #22c55e;
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transform: rotate(-3deg);
+            margin-bottom: 20px;
+        }
+        .btn-replay {
+            display: block;
+            color: #71717a;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-top: 15px;
+        }
+        .btn-replay:hover { color: #a1a1aa; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="stamp">OFFICIAL SIBLING PASS</div>
+        <h2>All The Best, Bhoomishka 🤙</h2>
+        <div class="sub">Valid From 17th Sept Till Last Exam</div>
+
+        <div class="clause-box">
+            <div>✔️ Exam hall se nikal kar faltu paper match karke dimaag kharab nahi karegi.</div>
+            <div>✔️ Kisi bhi topper ki "Yaar mera paper bohot bura gaya" wali fake baatein nahi sunegi.</div>
+            <div>✔️ Jitna aayega, pura confidence ke saath aayega. Result jo bhi ho, ghar pe apan dekh lenge.</div>
+        </div>
+
+        <p style="font-size: 1rem; color: #f43f5e; font-weight: 700;">Aag laga ke aana! You got this 🚀</p>
+
+        <a href="index.html" class="btn-replay">Wapas pehle page pe jaana hai?</a>
+    </div>
+
+    <script>
+        // Minimal tasteful confetti blast
+        confetti({
+            particleCount: 40,
+            spread: 60,
+            origin: { y: 0.6 }
+        });
+    </script>
+</body>
+</html>

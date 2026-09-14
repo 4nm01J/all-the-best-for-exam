@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Kit</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+        body {
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #09090b;
+            color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            max-width: 480px;
+            width: 100%;
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        h2 { font-size: 1.6rem; margin-bottom: 6px; }
+        p { color: #a1a1aa; font-size: 0.95rem; margin-bottom: 20px; }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        .item {
+            background: #09090b;
+            border: 1px solid #27272a;
+            padding: 14px;
+            border-radius: 12px;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: 0.2s;
+        }
+        .item.checked {
+            border-color: #22c55e;
+            background: rgba(34, 197, 94, 0.05);
+        }
+        .check-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 6px;
+            border: 2px solid #52525b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+        .item.checked .check-box {
+            background: #22c55e;
+            border-color: #22c55e;
+            color: black;
+        }
+        .btn-next {
+            display: block;
+            background: #27272a;
+            color: #71717a;
+            font-weight: 700;
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .btn-next.active {
+            background: #fafafa;
+            color: #09090b;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Admit Kar Yeh Tera Prep Plan Hai 💅</h2>
+        <p>Jo jo karti hai sab tick kar:</p>
+
+        <div class="grid">
+            <div class="item" onclick="toggle(this)">
+                <div class="check-box"></div>
+                <div>"Bas 10 min reel scroll kar lu phir padhungi" (3 ghante beet gaye)</div>
+            </div>
+            <div class="item" onclick="toggle(this)">
+                <div class="check-box"></div>
+                <div>Exam ki raat ko coffee peeke YouTube pe 'Complete Syllabus in 1 Shot' dekhna</div>
+            </div>
+            <div class="item" onclick="toggle(this)">
+                <div class="check-box"></div>
+                <div>Topper friend ko call karke bolna "Bhai mera kuch nahi hua"</div>
+            </div>
+            <div class="item" onclick="toggle(this)">
+                <div class="check-box"></div>
+                <div>Confidence aisa jaise paper tune hi set kiya ho 😎</div>
+            </div>
+        </div>
+
+        <a href="page3.html" id="btn" class="btn-next">Sab select karegi tabhi chalega 😂</a>
+    </div>
+
+    <script>
+        let count = 0;
+        function toggle(el) {
+            if(!el.classList.contains('checked')) {
+                el.classList.add('checked');
+                el.querySelector('.check-box').innerText = '✓';
+                count++;
+            }
+            if(count === 4) {
+                const b = document.getElementById('btn');
+                b.classList.add('active');
+                b.innerText = "Guilty As Charged! Next Chal →";
+            }
+        }
+    </script>
+</body>
+</html>

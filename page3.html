@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Strategy</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            min-height: 100vh;
+            font-family: system-ui, -apple-system, sans-serif;
+            background: #09090b;
+            color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .card {
+            max-width: 480px;
+            width: 100%;
+            background: #18181b;
+            border: 1px solid #27272a;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        h2 { font-size: 1.5rem; margin-bottom: 12px; }
+        .scenario {
+            background: #09090b;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            color: #d4d4d8;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            border: 1px solid #27272a;
+        }
+        .opt {
+            background: #27272a;
+            border: 1px solid transparent;
+            color: #f4f4f5;
+            padding: 14px;
+            border-radius: 12px;
+            width: 100%;
+            margin-bottom: 10px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+        .opt:hover { border-color: #52525b; }
+        #toast {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            background: rgba(239, 68, 68, 0.15);
+            color: #f87171;
+            border-radius: 10px;
+            font-size: 0.85rem;
+        }
+        #win {
+            display: none;
+            margin-top: 15px;
+            background: rgba(34, 197, 94, 0.15);
+            color: #4ade80;
+            padding: 14px;
+            border-radius: 10px;
+            line-height: 1.5;
+            font-size: 0.9rem;
+        }
+        .btn-next {
+            display: none;
+            margin-top: 20px;
+            background: #fafafa;
+            color: #09090b;
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Scenario Check 🧐</h2>
+        <div class="scenario">
+            Question paper me pehla hi question out-of-syllabus lag raha hai. Bhoomishka ka reaction kya hoga?
+        </div>
+
+        <div id="opts">
+            <button class="opt" onclick="wrong('Bro acting mat kar, tu kabhi panic nahi hoti 😂')">A) Panic karke washroom break mangegi</button>
+            <button class="opt" onclick="wrong('Topper se help mangna is against backbencher rules 🙅‍♂️')">B) Topper se puchne ki koshish karegi</button>
+            <button class="opt" onclick="correct()">C) Question ko hi naya answer bana degi aur confidence se 3 page likh aayegi</button>
+        </div>
+
+        <div id="toast"></div>
+        <div id="win">
+            Facts only! 💯 Backbencher blank sheet nahi chhodti kabhi. Ab thoda serious note pe aate hain, sun...
+        </div>
+
+        <a href="page4.html" id="btn-next" class="btn-next">Chal Next Page Pe →</a>
+    </div>
+
+    <script>
+        function wrong(msg) {
+            const t = document.getElementById('toast');
+            t.innerText = msg;
+            t.style.display = 'block';
+        }
+        function correct() {
+            document.getElementById('opts').style.display = 'none';
+            document.getElementById('toast').style.display = 'none';
+            document.getElementById('win').style.display = 'block';
+            document.getElementById('btn-next').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
